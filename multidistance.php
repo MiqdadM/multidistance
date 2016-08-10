@@ -13,6 +13,10 @@ class multidistance
 
     protected $manhatexec;
 
+    protected $chebyexec;
+
+    protected $minkowexec;
+
     public function __construct(array $vektor1, array $vektor2)
     {
         if (empty($vektor1)) {
@@ -43,27 +47,44 @@ class multidistance
     {
         $euclidean = [];
         $manhatan = [];
+        $cheby = [];
+        $minkowski = [];
         $value1 = $this->vektor1;
         $value2 = $this->vektor2;
         $pow = 0;
         $abs = 0;
-        for ($i=0; $i < count($value1) ; $i++) {
+        $root = 0;
+        for ($i = 0; $i < count($value1); ++$i) {
             $diff = $value1[$i] - $value2[$i];
             $pow += pow($diff, 2);
             $abs += abs($diff);
+            $root += pow($diff, 3);
         }
         $euc = sqrt($pow);
         $man = $abs;
+        $rootlambda = pow($root, 1 / 1 / 3);
         array_push($euclidean, $euc);
         array_push($manhatan, $abs);
+        array_push($minkowski, $rootlambda);
 
+        $this->setEculidean($euclidean);
+        $this->setManhatan($manhatan);
+        $this->setMinkowski($minkowski);
+    }
+
+    protected function setEculidean(array $euclidean)
+    {
         $this->euclidexec = $euclidean;
+    }
+
+    protected function setManhatan(array $manhatan)
+    {
         $this->manhatexec = $manhatan;
     }
 
-    protected function hitungEuclidean($nilai)
+    protected function setMinkowski(array $minkowski)
     {
-        return sqrt($nilai);
+        $this->minkowexec = $minkowski;
     }
 
     public function getEuclidean()
@@ -71,6 +92,7 @@ class multidistance
         if (empty($this->euclidexec)) {
             throw new Exception('Jalankan Method distance Terlebih Dahulu');
         }
+
         return $this->euclidexec;
     }
 
@@ -79,6 +101,16 @@ class multidistance
         if (empty($this->manhatexec)) {
             throw new Exception('Jalankan Method distance Terlebih Dahulu');
         }
+
         return $this->manhatexec;
+    }
+
+    public function getMinkowski()
+    {
+        if (empty($this->minkowexec)) {
+            throw new Exception('Jalankan Method distance Terlebih Dahulu');
+        }
+
+        return $this->minkowexec;
     }
 }
