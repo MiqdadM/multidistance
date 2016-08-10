@@ -11,6 +11,8 @@ class multidistance
 
     protected $euclidexec;
 
+    protected $manhatexec;
+
     public function __construct(array $vektor1, array $vektor2)
     {
         if (empty($vektor1)) {
@@ -40,17 +42,23 @@ class multidistance
     public function distance()
     {
         $euclidean = [];
+        $manhatan = [];
         $value1 = $this->vektor1;
         $value2 = $this->vektor2;
         $pow = 0;
+        $abs = 0;
         for ($i=0; $i < count($value1) ; $i++) {
             $diff = $value1[$i] - $value2[$i];
             $pow += pow($diff, 2);
+            $abs += abs($diff);
         }
-        $euc= $this->hitungEuclidean($pow);
+        $euc = sqrt($pow);
+        $man = $abs;
         array_push($euclidean, $euc);
+        array_push($manhatan, $abs);
 
         $this->euclidexec = $euclidean;
+        $this->manhatexec = $manhatan;
     }
 
     protected function hitungEuclidean($nilai)
@@ -61,8 +69,16 @@ class multidistance
     public function getEuclidean()
     {
         if (empty($this->euclidexec)) {
-            throw new Exception('Clustered data have not been hydrated yet - run cluster method first');
+            throw new Exception('Jalankan Method distance Terlebih Dahulu');
         }
         return $this->euclidexec;
+    }
+
+    public function getManhatan()
+    {
+        if (empty($this->manhatexec)) {
+            throw new Exception('Jalankan Method distance Terlebih Dahulu');
+        }
+        return $this->manhatexec;
     }
 }
