@@ -45,24 +45,30 @@ class multidistance
 
     public function distance()
     {
-        $euclidean = [];
-        $manhatan = [];
-        $cheby = [];
-        $minkowski = [];
         $value1 = $this->vektor1;
         $value2 = $this->vektor2;
+
+        $euclidean = [];
+        $manhatan = [];
+        $minkowski = [];
+        $cheby = [];
+
         $pow = 0;
         $abs = 0;
         $root = 0;
+        $insert = [];
         for ($i = 0; $i < count($value1); ++$i) {
             $diff = $value1[$i] - $value2[$i];
             $pow += pow($diff, 2);
             $abs += abs($diff);
             $root += pow($diff, 3);
+            $insert[$i] = $diff;
         }
+
         $euc = sqrt($pow);
         $man = $abs;
         $rootlambda = pow($root, 1 / 1 / 3);
+        $cheby = $insert;
         array_push($euclidean, $euc);
         array_push($manhatan, $abs);
         array_push($minkowski, $rootlambda);
@@ -70,6 +76,7 @@ class multidistance
         $this->setEculidean($euclidean);
         $this->setManhatan($manhatan);
         $this->setMinkowski($minkowski);
+        $this->setChebychef($cheby);
     }
 
     protected function setEculidean(array $euclidean)
@@ -85,6 +92,13 @@ class multidistance
     protected function setMinkowski(array $minkowski)
     {
         $this->minkowexec = $minkowski;
+    }
+
+    protected function setChebychef(array $cheby)
+    {
+        $chebychef = [];
+        array_push($chebychef, max($cheby));
+        $this->chebyexec = $chebychef;
     }
 
     public function getEuclidean()
@@ -112,5 +126,14 @@ class multidistance
         }
 
         return $this->minkowexec;
+    }
+
+    public function getChebychef()
+    {
+        if (empty($this->chebyexec)) {
+            throw new Exception('Jalankan Method distance Terlebih Dahulu');
+        }
+
+        return $this->chebyexec;
     }
 }

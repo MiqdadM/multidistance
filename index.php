@@ -26,6 +26,12 @@ try {
     echo'<pre>';
     print_r($tes->getMinkowski());
     echo'</pre>';
+
+    echo '</br>';
+    echo 'Chebychef Distance Method';
+    echo'<pre>';
+    print_r($tes->getChebychef());
+    echo'</pre>';
 } catch (Exception $e) {
     echo $e->getMessage()."\n";
 }
