@@ -17,6 +17,14 @@ class multidistance
 
     protected $minkowexec;
 
+    protected $canberaexec;
+
+    protected $brayexec;
+
+    protected $kullbackexec;
+
+    protected $jensenexec;
+
     public function __construct(array $vektor1, array $vektor2)
     {
         if (empty($vektor1)) {
@@ -52,34 +60,56 @@ class multidistance
         $manhatan = [];
         $minkowski = [];
         $cheby = [];
+        $canbera = [];
+        $bray = [];
+        $kullback = [];
+        $jensen = [];
 
         $pow = 0;
         $abs = 0;
         $root = 0;
         $insert = [];
+        $div = 0;
+        $sum = 0;
+        $log = 0;
+        $multiply1 = 0;
+        $multiply2 = 0;
+
         for ($i = 0; $i < count($value1); ++$i) {
             $diff = $value1[$i] - $value2[$i];
             $pow += pow($diff, 2);
             $abs += abs($diff);
             $root += pow($diff, 3);
             $insert[$i] = $diff;
+            $div += abs($diff) / abs($value1[$i] + $value2[$i]);
+            $sum += $value1[$i] + $value2[$i];
+            $log += $value1[$i] * (log($value1[$i]/$value2[$i]));
+            $multiply1 += $value1[$i] * (log((2 * $value1[$i]) / ($value1[$i] + $value2[$i])));
+            $multiply2 += $value2[$i] * (log((2 * $value2[$i]) / ($value1[$i] + $value2[$i])));
         }
 
         $euc = sqrt($pow);
-        $man = $abs;
         $rootlambda = pow($root, 1 / 1 / 3);
         $cheby = $insert;
+        $curtis = $abs / $sum;
+        $fullmultiply = $multiply1 + $multiply2;
+
         array_push($euclidean, $euc);
         array_push($manhatan, $abs);
         array_push($minkowski, $rootlambda);
+        array_push($canbera, $div);
+        array_push($bray, $curtis);
+        
 
-        $this->setEculidean($euclidean);
+        $this->setEuclidean($euclidean);
         $this->setManhatan($manhatan);
         $this->setMinkowski($minkowski);
         $this->setChebychef($cheby);
+        $this->setCanbera($canbera);
+        $this->setBrayCurtis($bray);
     }
 
-    protected function setEculidean(array $euclidean)
+    protected function setEuclidean(array $euclidean)
     {
         $this->euclidexec = $euclidean;
     }
@@ -100,6 +130,17 @@ class multidistance
         array_push($chebychef, max($cheby));
         $this->chebyexec = $chebychef;
     }
+
+    protected function setCanbera(array $canbera)
+    {
+        $this->canberaexec = $canbera;
+    }
+
+    protected function setBrayCurtis(array $bray)
+    {
+        $this->brayexec = $bray;
+    }
+
 
     public function getEuclidean()
     {
@@ -135,5 +176,41 @@ class multidistance
         }
 
         return $this->chebyexec;
+    }
+
+    public function getCanbera()
+    {
+        if (empty($this->canberaexec)) {
+            throw new Exception('Jalankan Method distance Terlebih Dahulu');
+        }
+
+        return $this->canberaexec;
+    }
+
+    public function getBrayCurtis()
+    {
+        if (empty($this->brayexec)) {
+            throw new Exception('Jalankan Method distance Terlebih Dahulu');
+        }
+
+        return $this->brayexec;
+    }
+
+    public function getKullbackLeibler()
+    {
+        if (empty($this->kullbackexec)) {
+            throw new Exception('Jalankan Method distance Terlebih Dahulu');
+        }
+
+        return $this->kullbackexec;
+    }
+
+    public function getJensenShannon()
+    {
+        if (empty($this->jensenexec)) {
+            throw new Exception('Jalankan Method distance Terlebih Dahulu');
+        }
+
+        return $this->jensenexec;
     }
 }
