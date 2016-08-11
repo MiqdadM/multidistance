@@ -99,7 +99,8 @@ class multidistance
         array_push($minkowski, $rootlambda);
         array_push($canbera, $div);
         array_push($bray, $curtis);
-        
+        array_push($kullback, $log);
+        array_push($jensen, $fullmultiply);
 
         $this->setEuclidean($euclidean);
         $this->setManhatan($manhatan);
@@ -107,6 +108,8 @@ class multidistance
         $this->setChebychef($cheby);
         $this->setCanbera($canbera);
         $this->setBrayCurtis($bray);
+        $this->setKullbackLeibler($kullback);
+        $this->setJensenShannon($jensen);
     }
 
     protected function setEuclidean(array $euclidean)
@@ -141,6 +144,15 @@ class multidistance
         $this->brayexec = $bray;
     }
 
+    protected function setKullbackLeibler($kullback)
+    {
+        $this->kullbackexec = $kullback;
+    }
+
+    protected function setJensenShannon($jensen)
+    {
+        $this->jensenexec = $jensen;
+    }
 
     public function getEuclidean()
     {

@@ -59,7 +59,7 @@ try {
     echo'<pre>';
     print_r($tes->getBrayCurtis());
     echo'</pre>';
-    /*
+
     echo '</br>';
     echo 'Kullback Leibler Distance Method';
     echo'<pre>';
@@ -70,7 +70,7 @@ try {
     echo 'Jensen Shannon Distance Method';
     echo'<pre>';
     print_r($tes->getJensenShannon());
-    echo'</pre>';*/
+    echo'</pre>';
 } catch (Exception $e) {
     echo $e->getMessage()."\n";
 }
