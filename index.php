@@ -8,6 +8,7 @@ $data2 = [2, 3, 7];
 
 try {
     echo "Vektor 1 = { ";
+
     foreach ($data1 as $key => $value) {
         echo "$value ";
     }
@@ -15,6 +16,7 @@ try {
     echo "</br>";
 
     echo "Vektor 2 = { ";
+      
     foreach ($data2 as $key => $value) {
         echo "$value ";
     }
