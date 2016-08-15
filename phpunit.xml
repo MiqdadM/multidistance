@@ -2,7 +2,7 @@
 <phpunit colors="true" bootstrap="vendor/autoload.php">
     <testsuites>
         <testsuite name="Application Test Unit">
-            <directory>tdd/</directory>
+            <directory>./tdd/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
