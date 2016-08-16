@@ -1,5 +1,5 @@
 <?php
-include('/../multidistance.php');
+include(dirname(__FILE__).'/../multidistance.php');
 
 /**
  *
