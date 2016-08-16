@@ -1,16 +1,8 @@
 {
-  "name": "miqdadm/phpunit-tutorial",
-  "description": "Multi Distance Based Similarity Method",
-  "authors": [
-      {
-          "name": "M. Miqdad",
-          "email": "m.miqdad13@gmail.com"
-      }
-  ],
     "require": {
     },
     "require-dev": {
         "phpunit/phpunit": "*"
-    },
+    }
     
 }
