@@ -9,7 +9,6 @@ class multidistanceTest extends \PHPUnit_Framework_TestCase
     public function testMethodOutput()
     {
         $data1 = [4, 3, 6];
-
         $data2 = [2, 3, 7];
 
         $expected  = [2.2360679774998];
@@ -23,7 +22,7 @@ class multidistanceTest extends \PHPUnit_Framework_TestCase
 
         $test = new multidistance($data1, $data2);
         $test->distance();
-        
+
         $result = $test->getEuclidean();
         $this->assertEquals($expected, $result);
 

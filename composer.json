@@ -1,8 +1,19 @@
 {
+    "name": "miqdadm/multidistance",
+    "description": "Calculate Multiple Distance Based Similarity Method",
+    "homepage": "https://github.com/MiqdadM/multidistance",
+    "keywords": ["similarity", "distance"],
+    "type": "library",
+    "authors": [
+        {
+            "name": "M. Miqdad",
+            "email": "m.miqdad13@gmail.com"
+        }
+    ],
     "require": {
     },
     "require-dev": {
         "phpunit/phpunit": "*"
     }
-    
-}
+
+ }
