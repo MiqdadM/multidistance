@@ -15,9 +15,9 @@ Calculate 2 Vektor Using 8 Distance Based Similarity Method :
 
 ## Requirements
 
-'''
+```
 PHP 5.4 +
-'''
+```
 
 ## Basic Usage
 
