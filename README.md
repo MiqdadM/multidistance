@@ -1,4 +1,4 @@
-# multidistance
+# Multidistance
 
 [![Build Status](https://travis-ci.org/MiqdadM/multidistance.svg?branch=master)](https://travis-ci.org/MiqdadM/multidistance)
 
@@ -13,10 +13,16 @@ Calculate 2 Vektor Using 8 Distance Based Similarity Method :
 - Kullback Leibler Distance Method 
 - Jensen Shannon Distance Method
 
-## usage
+## Requirements
+
+'''
+PHP 5.4 +
+'''
+
+## Basic Usage
 
 ```php
-
+<?php
 require 'multidistance.php';
 
 $test = new multidistance([4, 3, 6], [2, 3, 7]);
