@@ -21,7 +21,7 @@ Calculate 2 Vektor Using 8 Distance Based Similarity Method :
 PHP 5.4 +
 ```
 
-## Instalation
+## Installation
 
 Download [composer.phar](http://getcomposer.org/composer.phar) if you don't have one. Then run it from terminal.
 
