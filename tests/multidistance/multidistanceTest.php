@@ -1,6 +1,6 @@
 <?php
 
-use MiqdadM\Multidistance\multidistance;
+use \MiqdadM\Multidistance\multidistance;
 
 /**
  *
