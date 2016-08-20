@@ -1,5 +1,7 @@
 <?php
-spl_autoload_register();
+
+use MiqdadM\Multidistance\multidistance;
+
 /**
  *
  */
@@ -19,7 +21,7 @@ class multidistanceTest extends \PHPUnit_Framework_TestCase
         $expected7 = [1.8476846432762];
         $expected8 = [0.37829763262563];
 
-        $test = new \MiqdadM\Multidistance\multidistance($data1, $data2);
+        $test = new multidistance($data1, $data2);
         $test->distance();
 
         $result = $test->getEuclidean();
