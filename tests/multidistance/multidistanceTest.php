@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+spl_autoload_register();
 use MiqdadM\Multidistance\multidistance;
 
 /**
