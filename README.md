@@ -23,10 +23,10 @@ PHP 5.4 +
 
 ## Installation
 
-Download [composer.phar](http://getcomposer.org/composer.phar) if you don't have one. Then run it from terminal.
+Run via [composer](http://getcomposer.org)
 
 ```bash
-php composer.phar require "miqdadm/multidistance: *"
+composer require miqdadm/multidistance
 ```
 
 Or, you can put into your `composer.json` file.
@@ -40,7 +40,7 @@ Or, you can put into your `composer.json` file.
 Then run composer update
 
 ```bash
-php composer.phar update
+composer update
 ```
 
 ## Basic Usage
@@ -49,9 +49,9 @@ php composer.phar update
 <?php
 
 require 'vendor/autoload.php';
-use MiqdadM\Multidistance\multidistance;
+use MiqdadM\Multidistance\multidistance as Calculate;
 
-$test = new multidistance([4, 3, 6], [2, 3, 7]);
+$test = new Calculate([4, 3, 6], [2, 3, 7]);
 $test->distance(); //do this method first
 
 echo 'Euclidean Distance Method';
