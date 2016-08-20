@@ -1,6 +1,8 @@
 # Multidistance
 
 [![Build Status](https://travis-ci.org/MiqdadM/multidistance.svg?branch=master)](https://travis-ci.org/MiqdadM/multidistance)
+[![Total Downloads](https://poser.pugx.org/miqdadm/multidistance/downloads)](https://packagist.org/packages/miqdadm/multidistance)
+[![Latest Unstable Version](https://poser.pugx.org/miqdadm/multidistance/v/unstable)](https://packagist.org/packages/miqdadm/multidistance)
 
 
 Calculate 2 Vektor Using 8 Distance Based Similarity Method :
@@ -15,8 +17,30 @@ Calculate 2 Vektor Using 8 Distance Based Similarity Method :
 
 ## Requirements
 
-```
+```bash
 PHP 5.4 +
+```
+
+## Instalation
+
+Download [composer.phar](http://getcomposer.org/composer.phar) if you don't have one. Then run it from terminal.
+
+```bash
+php composer.phar require "miqdadm/multidistance: *"
+```
+
+Or, you can put into your `composer.json` file.
+
+```json
+"require": {
+  "miqdadm/multidistance": "*"
+}
+```
+
+Then run composer update
+
+```bash
+php composer.phar update
 ```
 
 ## Basic Usage
