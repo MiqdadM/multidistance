@@ -1,5 +1,5 @@
 <?php
-include(dirname(__FILE__).'/../multidistance.php');
+use MiqdadM\Multidistance\multidistance;
 
 /**
  *

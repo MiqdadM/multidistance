@@ -1,4 +1,5 @@
 <?php
+namespace MiqdadM\Multidistance;
 
 /**
  *
@@ -131,7 +132,7 @@ class multidistance
     {
         $chebychef = [];
         array_push($chebychef, max($cheby));
-        
+
         $this->chebyexec = $chebychef;
     }
 

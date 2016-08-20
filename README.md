@@ -3,14 +3,14 @@
 [![Build Status](https://travis-ci.org/MiqdadM/multidistance.svg?branch=master)](https://travis-ci.org/MiqdadM/multidistance)
 
 
-Calculate 2 Vektor Using 8 Distance Based Similarity Method : 
+Calculate 2 Vektor Using 8 Distance Based Similarity Method :
 - Euclidean Distance Method
-- Manhatan Distance Method 
+- Manhatan Distance Method
 - Minkowski Distance Method
-- Chebychef Distance Method 
-- Canbera Distance Method 
-- Bray Curtis Distance Method 
-- Kullback Leibler Distance Method 
+- Chebychef Distance Method
+- Canbera Distance Method
+- Bray Curtis Distance Method
+- Kullback Leibler Distance Method
 - Jensen Shannon Distance Method
 
 ## Requirements
@@ -23,10 +23,12 @@ PHP 5.4 +
 
 ```php
 <?php
-require 'multidistance.php';
+
+require 'vendor/autoload.php';
+use MiqdadM\Multidistance\multidistance;
 
 $test = new multidistance([4, 3, 6], [2, 3, 7]);
-$test->distance();
+$test->distance(); //do this method first
 
 echo 'Euclidean Distance Method';
 echo'<pre>';
